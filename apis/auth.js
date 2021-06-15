@@ -7,7 +7,7 @@ const router = express.Router();
 const resp = require('../resp');
 
 const User = require('../schema/user');
-const JWT_SECRET = process.env.JWT_SECRET;
+const JWT_SECRET = process.env.JWT_SECRET || 'TEMP_CHANGE';
 const salt = bcrypt.genSaltSync(10);
 
 const generateToken = user => jwt.sign(JSON.stringify(user), JWT_SECRET);
